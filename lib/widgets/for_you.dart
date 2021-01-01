@@ -22,25 +22,24 @@ class _ForYouState extends State<ForYou> {
               fontWeight: FontWeight.bold,
             ),
           ),
+          ListView.builder(
+              itemCount: forYou.length,
+              itemBuilder: (BuildContext context, int index) {
+                // Book book = forYou[index];
+                return Container(
+                  height: 110.0,
+                  // width: 80.0,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage(
+                          'assets/images/no-place-like-here.jpg'), // ${book.imgUrl}
+                    ),
+                  ),
+                );
+                // Text(book.name);
+              }),
         ],
       ),
     );
   }
 }
-
-// Column(
-//   children: [
-//     Container(
-//       height: 110.0,
-//       width: 80.0,
-//       // color: Colors.red,
-//       decoration: BoxDecoration(
-//         image: DecorationImage(
-//           image: AssetImage(
-//               'assets/images/no-place-like-here.jpg'), // ${book.imgUrl}
-//         ),
-//       ),
-//     ),
-//     Text(book.name),
-//   ],
-// );
