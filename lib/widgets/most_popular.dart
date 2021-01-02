@@ -1,23 +1,23 @@
 import 'package:bookee/models/book_model.dart';
 import 'package:flutter/material.dart';
 
-class ForYou extends StatefulWidget {
+class MostPopular extends StatefulWidget {
   @override
-  _ForYouState createState() => _ForYouState();
+  _MostPopularState createState() => _MostPopularState();
 }
 
-class _ForYouState extends State<ForYou> {
+class _MostPopularState extends State<MostPopular> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.fromLTRB(18.0, 0.0, 18.0, 0.0),
+      margin: EdgeInsets.symmetric(horizontal: 18.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
             padding: EdgeInsets.symmetric(vertical: 8.0),
             child: Text(
-              'For you',
+              'Most Popular',
               style: TextStyle(
                 color: Theme.of(context).primaryColor,
                 fontSize: 22.0,
@@ -26,16 +26,18 @@ class _ForYouState extends State<ForYou> {
             ),
           ),
           Container(
-            height: 180.0,
+            height: 220.0,
             child: ListView.builder(
-              scrollDirection: Axis.horizontal,
-              itemCount: forYou.length,
+              // scrollDirection: Axis.horizontal,
+              itemCount: mostPopular.length,
               itemBuilder: (BuildContext context, int index) {
-                Book book = forYou[index];
+                Book book = mostPopular[index];
                 return Container(
-                  margin: EdgeInsets.symmetric(horizontal: 10.0),
+                  margin:
+                      EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
                   width: 100.0,
-                  child: Column(
+                  // color: Colors.orange,
+                  child: Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       ClipRRect(
@@ -51,8 +53,10 @@ class _ForYouState extends State<ForYou> {
                           ),
                         ),
                       ),
-                      SizedBox(height: 10.0),
+                      SizedBox(width: 10.0),
                       Container(
+                        padding: EdgeInsets.symmetric(vertical: 12.0),
+                        width: 120.0,
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -60,24 +64,32 @@ class _ForYouState extends State<ForYou> {
                               book.name,
                               style: TextStyle(
                                 color: Colors.black,
-                                fontSize: 14.0,
+                                fontSize: 20.0,
                                 fontWeight: FontWeight.bold,
                               ),
-                              overflow: TextOverflow.ellipsis,
-                              maxLines: 1,
+                              maxLines: 2,
                             ),
                             SizedBox(height: 5.0),
                             Text(
-                              book.description,
+                              'By ${book.author}',
                               style: TextStyle(
                                 color: Colors.grey,
-                                fontSize: 10.0,
+                                fontSize: 14.0,
                               ),
                               overflow: TextOverflow.ellipsis,
-                              maxLines: 1,
+                              maxLines: 2,
                             ),
                           ],
                         ),
+                      ),
+                      IconButton(
+                        icon: Icon(
+                          book.isBookmarked
+                              ? Icons.bookmark
+                              : Icons.bookmark_border,
+                          size: 25.0,
+                        ),
+                        onPressed: () {},
                       ),
                     ],
                   ),

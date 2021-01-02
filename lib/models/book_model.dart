@@ -6,6 +6,7 @@ class Book {
   final double price;
   final String imgUrl;
   final int rate;
+  final bool isBookmarked;
 
   Book(
       {this.id,
@@ -14,10 +15,12 @@ class Book {
       this.rate,
       this.name,
       this.author,
-      this.imgUrl});
+      this.imgUrl,
+      this.isBookmarked});
 }
 
 Book one = Book(
+  isBookmarked: true,
   id: 0,
   name: 'The Girl In Red',
   description:
@@ -25,9 +28,10 @@ Book one = Book(
   price: 14.50,
   rate: 5,
   author: 'Christina Henry',
-  imgUrl: 'the-girl-in-red.jpg',
+  imgUrl: 'assets/images/the-girl-in-red.jpg',
 );
 Book two = Book(
+    isBookmarked: false,
     id: 1,
     name: 'The Zolin Conspiracy',
     description:
@@ -35,8 +39,9 @@ Book two = Book(
     price: 12.59,
     rate: 5,
     author: 'Charlotte E. English',
-    imgUrl: 'the-zolin-conspiracy.jpg');
+    imgUrl: 'assets/images/the-zolin-conspiracy.jpg');
 Book three = Book(
+    isBookmarked: false,
     id: 2,
     name: 'Rework',
     description:
@@ -44,8 +49,9 @@ Book three = Book(
     price: 19.91,
     rate: 5,
     author: ' Jason Fried',
-    imgUrl: 'rework.jpg');
+    imgUrl: 'assets/images/rework.jpg');
 Book four = Book(
+    isBookmarked: false,
     id: 3,
     name: 'The DaVinci Code',
     description:
@@ -53,8 +59,9 @@ Book four = Book(
     price: 15.99,
     rate: 5,
     author: 'Josh McDowell',
-    imgUrl: 'the-daVinci-code.jpg');
+    imgUrl: 'assets/images/the-daVinci-code.jpg');
 Book five = Book(
+    isBookmarked: true,
     id: 4,
     name: 'Deadly Cross',
     description:
@@ -62,8 +69,9 @@ Book five = Book(
     price: 12.98,
     rate: 3,
     author: 'James Patterson',
-    imgUrl: 'deadly-cross.jpg');
+    imgUrl: 'assets/images/deadly-cross.jpg');
 Book six = Book(
+    isBookmarked: false,
     id: 5,
     name: 'Fifty Shades of Grey',
     description:
@@ -71,8 +79,9 @@ Book six = Book(
     price: 13.99,
     rate: 4,
     author: 'E. L. James',
-    imgUrl: 'fifty-shades-of-grey.jpg');
+    imgUrl: 'assets/images/fifty-shades-of-grey.jpg');
 Book seven = Book(
+    isBookmarked: true,
     id: 6,
     name: 'No Place Like Here',
     description:
@@ -80,7 +89,7 @@ Book seven = Book(
     price: 12.99,
     rate: 5,
     author: 'Cecelia Ahern',
-    imgUrl: 'no-place-like-here.jpg');
+    imgUrl: 'assets/images/no-place-like-here.jpg');
 
 List<Book> forYou = [two, three, six, seven];
 List<Book> mostPopular = [one, four, five, six, seven];
