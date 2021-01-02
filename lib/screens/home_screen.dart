@@ -46,7 +46,11 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Container(
           margin: EdgeInsets.fromLTRB(20.0, 0.0, 20.0, 20.0),
           child: BottomNavigationBar(
-            // backgroundColor: Colors.grey[800],
+            elevation: 0.0,
+            // fixedColor: Colors.white,
+            selectedItemColor: Theme.of(context).primaryColor,
+            unselectedItemColor: Colors.white,
+            backgroundColor: Colors.grey[800],
             onTap: (int value) {
               setState(() {
                 _currentTab = value;
@@ -63,14 +67,14 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               BottomNavigationBarItem(
                 icon: Icon(
-                  Icons.local_mall,
+                  Icons.bookmark_border,
                   size: 30.0,
                 ),
                 title: SizedBox.shrink(),
               ),
               BottomNavigationBarItem(
                 icon: Icon(
-                  Icons.home,
+                  Icons.local_mall,
                   size: 30.0,
                 ),
                 title: SizedBox.shrink(),
